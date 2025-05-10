@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="../src/input.css">
+    <link rel="stylesheet" href="../src/output.css">
+    <style>
+        
+
+        body {
+            background: bisque;
+            overflow-x: hidden;
+        }
+
+        #main {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        #cursor {
+            width: 15px;
+            height: 15px;
+            background: transparent;
+            border-radius: 50px;
+            border: 2px solid green;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #dot {
+            width: 5px;
+            height: 5px;
+            background: green;
+            border-radius: 50%;
+
+        }
+       
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+        .part2{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .part2 button{
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .center{
+            background: red;
+            height: 85%;
+            width: 100%;
+            
+        }
+        .left{
+            background: lightblue;
+            height: 100%;
+            width: 50%;
+        }
+        .right{
+            background: rebeccapurple;
+            height: 100%;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <section id="main">
+        
+        <div class="w-full">
+            <nav class="max-w-[1200px] mx-auto p-10" id="nav">
+                <div class="flex items-center justify-between">
+                    <h1>Shanto</h1>
+                    <div class="part2">
+                        <ul>
+                            <li>About</li>
+                            <li>Contact</li>
+                            <li>Blog</li>
+                            <li>Pricing</li>
+                            <li>Service</li>
+                        </ul>
+                        <button>Request a quote</button>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="container h-[90%] flex items-center flex-col md:flex-row " id="hero">
+            <div class="flex flex-col  w-full md:w-1/2  p-10">
+                <h2 class="text-5xl font-semibold -tracking-tighter leading-tight mb-5">Navugating the digital landscape for success</h2>
+                <p class="max-w-2/3 mb-5 ">our digital marketing agency helps businesses grow and succeed  online through a range of services includeing SEO.</p>
+
+                <button class="p-3 -tracking-tight bg-black rounded-lg text-white inline-block text-start w-fit">Book a Consultation</button>
+            </div>
+            <div class="flex flex-col w-full md:w-1/2 items-center justify-center">
+               <img src="./img.png" alt="" class="w-[300px] md:w-[400px] object-fill">
+            </div>
+           
+        </div>
+
+
+        <div class="container p-10">
+            <marquee behavior="" direction="left">
+                <ul class="flex list-none justify-between text-3xl">
+                    <li>Shanto</li>
+                    <li>Kumar</li>
+                    <li>Das</li>
+                    <li>From</li>
+                    <li>Dhaka</li>
+                </ul>
+            </marquee>
+        </div>
+
+
+        <div class="container p-10" id="card">
+            <div class="flex items-center gap-5 my-8" id="descrip">
+                <h2 class="font-bold text-xl bg-lime-300 p-1 ">Services</h2>
+                <p class="max-w-2xl text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero amet laborum, accusamus officiis soluta eius autem libero culpa explicabo itaque!</p>
+            </div>
+            <div class="flex flex-col shrink  md:flex-row  flex-wrap gap-5 justify-items-center">
+                <div id="left1" class=" elem w-full md:w-[45%] bg-amber-600 text-white ">
+                    <h3 class="text-2xl font-bold mb-2.5 ">Search engine optimaization</h3>
+                    <button>Learn more</button>
+                </div>
+                <div id="right1" class="elem w-full md:w-[45%] bg-amber-600 text-white ">
+                    <h3 class="text-2xl font-bold mb-2.5 ">Search engine optimaization</h3>
+                    <button>Learn more</button>
+                </div>
+                <div id="left2" class="elem w-full md:w-[45%] bg-amber-600 text-white ">
+                    <h3 class="text-2xl font-bold mb-2.5 ">Search engine optimaization</h3>
+                    <button>Learn more</button>
+                </div>
+                <div id="right2" class="elem w-full md:w-[45%] bg-amber-600 text-white ">
+                    <h3 class="text-2xl font-bold mb-2.5 ">Search engine optimaization</h3>
+                    <button>Learn more</button>
+                </div>
+               
+                
+                
+            </div>
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit asperiores numquam saepe labore qui aspernatur suscipit officia quos repellat maxime optio fuga est, doloribus consectetur iure eius excepturi ad maiores corrupti veniam voluptatum. Amet, eum atque. Consequatur, aperiam. Asperiores, voluptatibus, doloremque omnis quasi repellendus fugit fuga voluptate obcaecati harum ex excepturi beatae ad voluptas nisi. Ullam nesciunt provident saepe sapiente sit a, impedit natus, tempore reprehenderit dicta tenetur quae odio nisi maiores illum eum. Eveniet expedita ullam eos hic, consectetur totam est! Unde praesentium animi ab, perspiciatis vitae rem expedita nulla itaque aliquam, dolorum facilis ut incidunt, quidem ipsa veniam sit rerum ad voluptates nostrum? Beatae in assumenda enim quas tempora, quis repellendus! Ipsum neque, placeat, voluptate laborum dolore dolores facilis magnam eos temporibus nulla nam! Tempore quidem voluptatem asperiores, id maxime nihil dolorum, odio aperiam unde dolorem, culpa quasi porro? Sapiente, accusantium, at ipsum molestiae atque reprehenderit laborum aliquid natus deleniti expedita nihil sunt quam explicabo? Explicabo labore ut fuga aperiam quod qui laboriosam fugit minima perspiciatis mollitia reiciendis aliquam suscipit amet quibusdam repudiandae voluptatem est itaque, voluptates temporibus repellendus tempore assumenda debitis maiores modi. Vel rem a cum quibusdam suscipit nemo amet praesentium dignissimos, facilis mollitia veritatis, perspiciatis nobis ex ea. Esse ab minima doloremque, sequi iure unde? Aspernatur dolore nisi accusantium omnis quam labore adipisci dolores dolorem enim, doloribus soluta voluptates eligendi quia neque, provident totam tenetur nobis, aliquam rerum. Praesentium harum totam voluptatibus ab deleniti quos voluptatem tempore voluptatum non magnam dolor quia dignissimos doloremque dolorem, et, animi incidunt voluptates tenetur mollitia eveniet! Porro fugiat, minima rem itaque, in nostrum aperiam reiciendis voluptatum necessitatibus nulla hic! Veritatis, unde ut recusandae, vel iste eligendi magnam minima distinctio ullam error iusto doloremque ea est officia ipsam ex sapiente dolorum. Omnis et accusantium aliquam perferendis ipsum earum quae ex nostrum nisi. Rem voluptates molestias eveniet minus, fugit itaque aliquid, voluptatem numquam consequatur, nulla quo nemo quam sunt accusamus amet ullam. Similique cumque illum dolorem voluptate quo optio quaerat vel aperiam. Et animi vero provident ullam, qui nesciunt ipsum recusandae quis quaerat praesentium? Rem praesentium omnis est nobis tenetur laudantium, exercitationem dolore mollitia facere odit cum consequatur laboriosam deserunt in facilis recusandae quibusdam dicta laborum quos! Minima iusto dolorum a unde, dignissimos labore at consequatur quos est temporibus in id sapiente, aut perspiciatis autem hic tempore? Impedit excepturi, hic atque molestias enim eos illo voluptates ab. At quis blanditiis consequatur ipsam deserunt repudiandae soluta sapiente magni id neque optio quidem, animi quibusdam? Nemo pariatur labore ullam, unde beatae dolores rerum neque facere, eaque provident facilis magnam, dolore explicabo voluptatum? Reiciendis saepe minima sed inventore quas similique esse id earum quod qui quis, sequi cumque repellendus quaerat. Molestias sit numquam eius? Eveniet pariatur quam eum voluptate iure culpa atque delectus quae! Magni deserunt assumenda vero temporibus laborum, iusto quasi enim? Obcaecati, at? Explicabo hic facilis impedit ex. Doloribus molestias autem, quo quae natus corporis neque non modi, cum, omnis nesciunt explicabo! A deleniti recusandae vitae reprehenderit perspiciatis magni cumque, quia laboriosam.
+        </div>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
