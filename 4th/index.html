@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="../src/input.css">
+    <link rel="stylesheet" href="../src/output.css">
+    <style>
+        body {
+            overflow-x: hidden;
+            background: white;
+        }
+        
+        nav span{
+            animation: anim 5s linear infinite;
+        }
+        @keyframes anim{
+            0%{
+                left: 0;
+                transform: translate(-100%);
+            }
+            100%{
+                left: 100%;
+                transform: translate(0%);
+            }
+        }
+        .col img{
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+        .col-1 img:nth-child(1){
+            width: 150px;
+            height: 180px;
+            
+        }
+        .box1  .col-1 img:nth-child(1){
+            transform: translateY(-50px);
+            
+        }
+        .box2  .col-1 img:nth-child(1){
+            transform: translateY(200px);
+            
+        }
+        
+        .col-1 img:nth-child(2){
+            width: 380px;
+            height: 420px;
+
+        }
+
+        .col-3 img:nth-child(1){
+            width: 320px;
+            
+        }
+        .col-3 img:nth-child(2){
+            width: 150px;
+        }
+        .col-3 img:nth-child(3){
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="fixed top-0 w-full z-10">
+        <nav class="container flex justify-between items-center py-4 px-10 ">
+            <span class="w-[50px] h-[2px] absolute bottom-0" style="background: linear-gradient(90deg, transparent, #fff);"></span>
+            <div class="capitalize text-3xl cursor-pointer font-w text-white">SHANTO</div>
+            <ul class="flex items-center gap-20">
+                <li><a href="" class="text-white uppercase">About</a></li>
+                <li><a href="" class="text-white uppercase">Contact</a></li>
+            </ul>
+            <div>Instegram</div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="video-container">
+            <video class="h-screen w-screen object-cover" src="./media/flower.mp4" autoplay muted loop></video>
+        </div>
+        <div class="absolute top-0 h-screen w-full">
+            <img class="w-full h-full object-cover" src="./media/window.png" alt="">
+        </div>
+    </section>
+
+    <section class="bg-[#141414] p-20">
+        <div class="flex flex-col gap-32 relative">
+            <div class="box1 flex gap-6">
+                <div class="col col-1 flex gap-5">
+                    <img src="./media/1.jpeg" alt="">
+                    <img src="./media/2.jpeg" alt="">
+                </div>
+                <div class="col col-2 m-auto">
+                    <h2 class="text-8xl font-w capitalize text-white ">Shanto</h2>
+                    <span class="uppercase tracking-tighter text-xs text-white mb-5 opacity-[0.5]">25 Dec 2020</span>
+                    <div class="line h-[1px] w-[50px] bg-gray-800 my-8 mx-0"></div>
+                    <div class="text-box">
+                        <p class="text-xs leading-7 pb-4 text-white">
+                            This series is excellently showing that ordinary portrait photography still can be inspiring for you.
+                        </p>
+                    </div>
+                </div>
+                <div class="col col-3 flex justify-center flex-wrap gap-10">
+                    <img src="./media/3.webp" alt="">
+                    <img src="./media/4.jpeg" alt="">
+                    <img src="./media/5.jpeg" alt="">
+                </div>
+            </div>
+            
+            <div class="box2 flex gap-6">
+                <div class="col col-1 flex gap-5">
+                    <img src="./media/p1.jpeg" alt="">
+                    <img src="./media/p2.webp" alt="">
+                </div>
+                <div class="col col-2 m-auto">
+                    <h2 class="text-8xl font-w capitalize text-white ">Soul Dance</h2>
+                    <span class="uppercase tracking-tighter text-xs text-white mb-5 opacity-[0.5]">25 Dec 2020</span>
+                    <div class="line h-[1px] w-[50px] bg-gray-800 my-8 mx-0"></div>
+                    <div class="text-box">
+                        <p class="text-xs leading-7 pb-4 text-white">
+                            This series is excellently showing that ordinary portrait photography still can be inspiring for you.
+                        </p>
+                    </div>
+                </div>
+                <div class="col col-3 flex justify-center flex-wrap gap-10">
+                    <img src="./media/p3.jpeg" alt="">
+                    <img src="./media/p4.jpeg" alt="">
+                    <img src="./media/p5.jpeg" alt="">
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

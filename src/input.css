@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
-
-@layer{
-    .container{
+@font-face {
+    font-family: 'w';
+    src: url(../4th/fonts/WanoQuin-ExtraBold.otf) format('opentype');
+}
+@theme{
+    --font-w: 'w', sans-serif;
+}
+@layer {
+    .container {
         width: 100%;
         max-width: 1200px;
         margin: auto;
     }
-    .elem{
-        
+
+    .elem {
+
         flex-shrink: 0;
         border: 1px solid red;
         border-radius: 20px;
         padding: 12px;
         box-shadow: 0 6px 1px black;
     }
+
 }
