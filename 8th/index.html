@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/input.css">
+    <link rel="stylesheet" href="../src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<style>
+    @font-face {
+        font-family: product B;
+        src: url(./Fonts/Product\ Sans\ Bold.ttf);
+    }
+
+    @font-face {
+        font-family: product R;
+        src: url(./Fonts/Product\ Sans\ Regular.ttf);
+    }
+
+    * {
+        box-sizing: border-box;
+        font-family: product R;
+
+    }
+
+    body {
+        overflow-x: hidden;
+        color: white;
+    }
+   
+    .imgCon{
+        width: 0%;
+        height: 100%;
+        position: absolute;
+    }
+    .text h1{
+        top: 100px;
+        font-size: 6vw;
+        position: absolute;
+    }
+
+</style>
+
+<body>
+    <div class="main w-full h-screen bg-[#dadada] flex items-center justify-center">
+        <div class="w-[70%] h-[80%]  relative ">
+            <div class="text absolute left-[-5%] bottom-[30%] w-[400px] h-[100px]  overflow-hidden  z-50">
+                <h1 >this is one</h1>
+                <h1>this is two</h1>
+                <h1>this is three</h1>
+            </div>
+            <div class="imgCon">
+                <img class="w-full h-full object-cover" src="./img/img_one.jpg" alt="">
+            </div>
+            <div class="imgCon">
+                 <img class="w-full h-full object-cover" src="./img/img_two.jpg" alt="">
+            </div>
+            <div class="imgCon">
+                 <img class="w-full h-full object-cover" src="./img/img_three.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
