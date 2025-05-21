@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Slider with Text and Image</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        .circle-slider {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .circle {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            position: absolute;
+            right: -23%;
+            top: 12%;
+            cursor: grab;
+        }
+
+        .circle:active {
+            cursor: grabbing;
+        }
+
+        .circle-content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .circle-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: absolute;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .circle-image:nth-child(1) {
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-image:nth-child(2) {
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-image:nth-child(3) {
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-image:nth-child(4) {
+            top: 50%;
+            left: 0%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card {
+            width: 600px;
+            max-width: 600px;
+            height: 500px;
+            border-radius: 10px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 20px;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 80%;
+            left: 0%;
+            transform: translate(0%, -50%);
+            z-index: 5;
+        }
+
+        .card-description {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-description.active {
+            opacity: 1;
+        }
+        .arrow_animation i {
+            font-size: 30px;
+            transition: .5s;
+            animation: arrowMove 1.5s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes arrowMove {
+            0% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .arrow_animation {
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle-slider">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-description" data-index="0">
+                    <h1>Card 1</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                </div>
+                <div class="card-description" data-index="1">
+                    <h1>Card 2</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                </div>
+                <div class="card-description" data-index="2">
+                    <h1>Card 3</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                </div>
+                <div class="card-description" data-index="3">
+                    <h1>Card 4</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                </div>
+            </div>
+            <div class="circle">
+                <div class="circle-content">
+                    <img class="circle-image"
+                        src="https://cdn.pixabay.com/photo/2025/04/27/13/31/avocado-9563037_640.png" alt="">
+                    <img class="circle-image" src="./img/img2.png" alt="">
+                    <img class="circle-image" src="./img/one.jpg" alt="">
+                    <img class="circle-image" src="./img/HeroImage.png" alt="">
+                </div>
+                <div class="arrow_animation">
+                    <i class="ri-expand-horizontal-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const circleContent = document.querySelector('.circle-content');
+        const images = document.querySelectorAll('.circle-image');
+        const descriptions = document.querySelectorAll('.card-description');
+        let currentRotation = 0;
+        let startX;
+        let isDragging = false;
+
+        // Show first text by default
+        descriptions[0].classList.add('active');
+
+        function updateRotation(rotation) {
+            circleContent.style.transform = `rotate(${rotation}deg)`;
+            currentRotation = rotation;
+
+            // Update descriptions
+            const activeIndex = Math.round((360 - (rotation % 360)) / 90) % 4;
+            descriptions.forEach((desc, index) => {
+                desc.classList.remove('active');
+                if (index === activeIndex) {
+                    desc.classList.add('active');
+                }
+            });
+        }
+
+        // Touch events
+        circleContent.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        circleContent.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        circleContent.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    // Swipe left - rotate counter-clockwise
+                    currentRotation -= 90;
+                } else {
+                    // Swipe right - rotate clockwise
+                    currentRotation += 90;
+                }
+                updateRotation(currentRotation);
+            }
+            isDragging = false;
+        });
+
+        // Mouse events
+        circleContent.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+        });
+
+        circleContent.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        circleContent.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            const endX = e.clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    // Swipe left - rotate counter-clockwise
+                    currentRotation -= 90;
+                } else {
+                    // Swipe right - rotate clockwise
+                    currentRotation += 90;
+                }
+                updateRotation(currentRotation);
+            }
+            isDragging = false;
+        });
+
+        // Click events for images
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                const currentIndex = Math.round((360 - (currentRotation % 360)) / 90) % 4;
+                let nextIndex = (currentIndex + 1) % 4;
+                let rotationDiff = -90; // Always rotate counter-clockwise by 90 degrees
+
+                currentRotation += rotationDiff;
+                updateRotation(currentRotation);
+            });
+        });
+
+        // Prevent default drag behavior
+        circleContent.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
