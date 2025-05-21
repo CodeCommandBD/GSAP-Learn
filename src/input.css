@@ -4,23 +4,24 @@
     font-family: 'w';
     src: url(../4th/fonts/WanoQuin-ExtraBold.otf) format('opentype');
 }
-@theme{
+@layer base {
+  :root {
     --font-w: 'w', sans-serif;
+  }
 }
-@layer {
-    .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-    }
 
-    .elem {
+@layer components {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
 
-        flex-shrink: 0;
-        border: 1px solid red;
-        border-radius: 20px;
-        padding: 12px;
-        box-shadow: 0 6px 1px black;
-    }
-
+  .elem {
+    flex-shrink: 0;
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 6px 1px black;
+  }
 }
