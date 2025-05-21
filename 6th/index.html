@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/input.css">
+    <link rel="stylesheet" href="../src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<style>
+    @font-face {
+        font-family: product B;
+        src: url(./Fonts/Product\ Sans\ Bold.ttf);
+    }
+
+    @font-face {
+        font-family: product R;
+        src: url(./Fonts/Product\ Sans\ Regular.ttf);
+    }
+
+    * {
+        box-sizing: border-box;
+        font-family: product R;
+
+    }
+
+    body {
+        overflow-x: hidden;
+        color: white;
+    }
+    #hero::after{
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 5px;
+        background: red;
+        left: 50%;
+        bottom: -5%;
+        transform: translate(-50%, -50%);
+    }
+    #main img{
+        transition:margin 0.5s ease;
+        
+    }
+    #main img:hover{
+        margin-top: 40px;
+    }
+
+
+</style>
+
+<body>
+    <div class="relative">
+        <header >
+            <nav class="h-[100px] w-full fixed top-0 bg-red-500 flex items-center justify-between px-8">
+                <h1 class="text-[2vw] font-bold">This is DIGITAL</h1>
+                <ul class="flex items-center gap-8">
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Work</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Culture</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main" class="h-screen w-full flex items-center justify-center relative">
+            <h2 id="hero" class="text-[5vw] w-[60%] text-black uppercase relative text-center">Digital performance solution</h2>
+            <img id="img1" class="absolute h-[550px] w-[350px] left-[2%] top-[20%]" src="https://shorturl.at/XgWC8" alt="">
+            <img id="img2" class="absolute h-[250px] w-[250px] right-[15%] top-[11%]" src="https://shorturl.at/JpWxc" alt="">
+            <img id="img3" class="absolute w-[280px] h-[300px] right-[8%] top-[50%]"  src="https://shorturl.at/7ZpK4" alt="">
+        </main>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
